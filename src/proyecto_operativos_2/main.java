@@ -9,7 +9,7 @@ package proyecto_operativos_2;
  *
  * @author rober
  */
-public class Proyecto_operativos_2 {
+public class main {
 
     /**
      * @param args the command line arguments
