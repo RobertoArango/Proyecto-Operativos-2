@@ -28,7 +28,7 @@ public class Vehiculos {
         this.contador = 0;
         this.calidad = calidad;
         this.marca = marca;
-        this.puntos = puntos;
+        this.puntos = PiezasIlicitas.piezasPts();
         this.estado = estado;
     }
     
