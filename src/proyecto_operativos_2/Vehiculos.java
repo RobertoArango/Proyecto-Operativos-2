@@ -21,7 +21,7 @@ public class Vehiculos {
     public String info = "";
     public boolean estado; 
     
-    public Vehiculos (int id, int nivel, int calidad, int marca, boolean estado){
+    public Vehiculos (int id, int nivel, int calidad, int marca){
         
         this.id = id;
         this.nivel = nivel;
@@ -29,7 +29,6 @@ public class Vehiculos {
         this.calidad = calidad;
         this.marca = marca;
         this.puntos = PiezasIlicitas.piezasPts();
-        this.estado = estado;
     }
     
     public String getNombre() {
@@ -46,10 +45,6 @@ public class Vehiculos {
     
     public void setInfo(String info){
         this.info = info;
-    }
-    
-    public void setEstado(boolean estado){
-        this.estado = estado;
     }
     
     public void setCalidad(int calidad){
