@@ -138,6 +138,8 @@ public class Administrador {
     
     public Vehiculos seleccVehiculo(int marca) {
         
+        return null;
+        
     }
     
     public void reEncolar(Vehiculos vehiculo) {
@@ -145,5 +147,6 @@ public class Administrador {
     }
     
     public void encolarRefuerzo(Vehiculos vehiculo) {
-}
+    }
     
+}
