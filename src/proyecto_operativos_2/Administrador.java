@@ -136,17 +136,170 @@ public class Administrador {
         }
     }
     
+    private Vehiculos desencolarVehiculo(Colas seleccCola, Colas seleccCola2, Colas seleccCola3) {
+        if (seleccCola.getSize() > 0) {
+            Vehiculos selecc = (Vehiculos) seleccCola.desencolar();
+            selecc.resetContador();
+            return selecc;
+        } else if (seleccCola2.getSize() > 0) {
+            Vehiculos selecc = (Vehiculos) seleccCola2.desencolar();
+            selecc.resetContador();
+            return selecc;
+        } else if (seleccCola3.getSize() > 0) {
+            Vehiculos selecc = (Vehiculos) seleccCola3.desencolar();
+            selecc.resetContador();
+            return selecc;
+        } else {
+            System.out.println("NO HAY VEHICULOS EN COLA");
+            return null;
+
+        }
+    }
+    
     public Vehiculos seleccVehiculo(int marca) {
         
-        return null;
+        Vehiculos vehiculoSelecc = null;
         
+        if (marca == 1) {
+            
+            Vehiculos desencolarVehiculo1 = desencolarVehiculo(main.colaNivel1C1, main.colaNivel2C1, main.colaNivel3C1);
+            
+            if (desencolarVehiculo1 == null) {
+                System.out.println("No hay Vehiculos");
+            } else {
+                vehiculoSelecc = desencolarVehiculo1;
+            }
+                   
+            Colas colaNivel2Aux = new Colas();           
+            while (!main.colaNivel2C1.isEmpty()) {
+                Vehiculos vehiculo;
+                vehiculo = (Vehiculos) main.colaNivel2C1.desencolar();
+                if (vehiculo.contador >= 8) {
+                    vehiculo.resetContador();
+                    vehiculo.setNivel(1);
+                    Vehiculos vehi = new Vehiculos(vehiculo.id, vehiculo.nivel,vehiculo.calidad,vehiculo.marca);
+                    vehi.setNombre(vehiculo.getNombre());
+                    main.colaNivel1C1.encolar(vehi);
+                } else {
+                    vehiculo.sumContador();
+                    colaNivel2Aux.encolar(vehiculo);
+                }
+            }
+            main.colaNivel2C1 = colaNivel2Aux;
+            
+            Colas colaNivel3Aux = new Colas();            
+            while (!main.colaNivel3C1.isEmpty()) {
+                Vehiculos vehiculo;
+                vehiculo = (Vehiculos) main.colaNivel3C1.desencolar();
+                if (vehiculo.contador >= 8) {
+                    vehiculo.resetContador();
+                    vehiculo.setNivel(2);
+                    Vehiculos vehi = new Vehiculos(vehiculo.id, vehiculo.nivel,vehiculo.calidad,vehiculo.marca);
+                    vehi.setNombre(vehiculo.getNombre());
+                    main.colaNivel2C1.encolar(vehi);
+                } else {
+                    vehiculo.sumContador();
+                    colaNivel3Aux.encolar(vehiculo);
+                }
+            }
+             main.colaNivel3C1 = colaNivel2Aux;
+             
+             Nodos primero = main.colaRefuerzo1.getFirst();
+             for (int i = 0; i < main.colaRefuerzo1.getSize(); i++) {
+                Vehiculos vehiculo = (Vehiculos) primero.getData();
+                vehiculo.sumContador();
+                primero = primero.getNext();
+            }
+            
+        } else {
+            
+            Vehiculos desencolarVehiculo2 = desencolarVehiculo(main.colaNivel1C2, main.colaNivel2C2, main.colaNivel3C2);
+            
+            if (desencolarVehiculo2 == null) {
+                System.out.println("No hay Vehiculos");
+            } else {
+                vehiculoSelecc = desencolarVehiculo2;
+            }
+                   
+            Colas colaNivel2Aux = new Colas();           
+            while (!main.colaNivel2C2.isEmpty()) {
+                Vehiculos vehiculo;
+                vehiculo = (Vehiculos) main.colaNivel2C2.desencolar();
+                if (vehiculo.contador >= 8) {
+                    vehiculo.resetContador();
+                    vehiculo.setNivel(1);
+                    Vehiculos vehi = new Vehiculos(vehiculo.id, vehiculo.nivel,vehiculo.calidad,vehiculo.marca);
+                    vehi.setNombre(vehiculo.getNombre());
+                    main.colaNivel1C2.encolar(vehi);
+                } else {
+                    vehiculo.sumContador();
+                    colaNivel2Aux.encolar(vehiculo);
+                }
+            }
+            main.colaNivel2C2 = colaNivel2Aux;
+            
+            Colas colaNivel3Aux = new Colas();            
+            while (!main.colaNivel3C2.isEmpty()) {
+                Vehiculos vehiculo;
+                vehiculo = (Vehiculos) main.colaNivel3C2.desencolar();
+                if (vehiculo.contador >= 8) {
+                    vehiculo.resetContador();
+                    vehiculo.setNivel(2);
+                    Vehiculos vehi = new Vehiculos(vehiculo.id, vehiculo.nivel,vehiculo.calidad,vehiculo.marca);
+                    vehi.setNombre(vehiculo.getNombre());
+                    main.colaNivel2C2.encolar(vehi);
+                } else {
+                    vehiculo.sumContador();
+                    colaNivel3Aux.encolar(vehiculo);
+                }
+            }
+             main.colaNivel3C2 = colaNivel2Aux;
+             
+             Nodos primero = main.colaRefuerzo2.getFirst();
+             for (int i = 0; i < main.colaRefuerzo2.getSize(); i++) {
+                Vehiculos vehiculo = (Vehiculos) primero.getData();
+                vehiculo.sumContador();
+                primero = primero.getNext();
+            }
+            
+        }
+        return vehiculoSelecc;
+
     }
     
     public void reEncolar(Vehiculos vehiculo) {
         
+        switch (vehiculo.marca) {
+            case 1: {
+                colaNivel(vehiculo, main.colaNivel1C1, main.colaNivel2C1, main.colaNivel3C1);
+                break;
+            }
+            case 2: {
+                colaNivel(vehiculo, main.colaNivel1C2, main.colaNivel2C2, main.colaNivel3C2);
+                break;
+
+            }
+            default: {
+                break;
+            }
+        }
+               
     }
     
     public void encolarRefuerzo(Vehiculos vehiculo) {
+
+        switch (vehiculo.marca) {
+            case 1: {
+                main.colaRefuerzo1.encolar(vehiculo);
+                break;
+            }
+            case 2: {
+                main.colaRefuerzo2.encolar(vehiculo);
+                break;
+
+            }
+
+        }
     }
     
 }

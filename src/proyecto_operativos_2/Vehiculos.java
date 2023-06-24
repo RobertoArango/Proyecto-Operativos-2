@@ -51,6 +51,10 @@ public class Vehiculos {
         this.calidad = calidad;
     }
     
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+    
     public void sumContador(){
         this.contador++;
     }
