@@ -190,6 +190,25 @@ public class Administrador {
     }
     
     public void encolarRefuerzo(Vehiculos vehiculo) {
+        
+    }
+    
+    public void desencolarRefuerzo(){
+        
+        Random probabilidad = new Random();
+        
+        int probabilidad1 = probabilidad.nextInt(100);
+        int probabilidad2 = probabilidad.nextInt(100);
+        
+        if (main.colaRefuerzo1.getSize() > 0 && probabilidad1 <= 40) {
+            Vehiculos vehiculo = (Vehiculos) main.colaRefuerzo1.desencolar();
+            reEncolar(vehiculo);//revisar como mandarlo a la cola 1
+        }
+        
+        if (main.colaRefuerzo2.getSize() > 0 && probabilidad1 <= 40) {
+            Vehiculos vehiculo = (Vehiculos) main.colaRefuerzo2.desencolar();
+            reEncolar(vehiculo);//revisar como mandarlo a la cola 1
+        }
     }
     
 }
