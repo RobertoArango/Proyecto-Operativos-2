@@ -94,7 +94,6 @@ public class Administrador {
             //Bugatti
             int carroceria1 = CalidadVehiculo(2, carroceriaProb, 60);
             total += carroceria1;
-            //probs.nextInt(100) <=70
             
             int chasis1 = CalidadVehiculo(1, chasisProb, 70);
             total += chasis1;
@@ -133,7 +132,51 @@ public class Administrador {
             System.out.println(vehiculo2.getNombre());
             System.out.println(vehiculo2.id);
             System.out.println(vehiculo2.calidad);
+        } else {
+            if (probs.nextInt(100) <= 80){
+                int carroceria1 = CalidadVehiculo(2, carroceriaProb, 60);
+                total += carroceria1;
+
+                int chasis1 = CalidadVehiculo(1, chasisProb, 70);
+                total += chasis1;
+
+                int motores1 = CalidadVehiculo(4, motorProb, 50);
+                total += motores1;
+
+                int ruedas1 = CalidadVehiculo(4, ruedaProb, 60);
+                total += ruedas1;
+
+                Vehiculos vehiculo1 = retornarVehiculoAgregado(total, 1);
+                vehiculo1.setNombre("Bugatti");
+                vehiculo1.setInfo("2 carrocerias, 1 chasis, 4 motores, 4 ruedas");
+                colaNivel(vehiculo1, main.colaNivel1C1, main.colaNivel2C1, main.colaNivel3C1);
+                System.out.println(vehiculo1.getNombre());
+                System.out.println(vehiculo1.id);
+                System.out.println(vehiculo1.calidad);
+
+                //Lambo
+                int carroceria2 = CalidadVehiculo(1, carroceriaProb2, 60);
+                total += carroceria2;
+
+                int chasis2 = CalidadVehiculo(2, chasisProb2, 70);
+                total += chasis2;
+
+                int motores2 = CalidadVehiculo(6, motorProb2, 50);
+                total += motores2;
+
+                int ruedas2 = CalidadVehiculo(5, ruedaProb2, 60);
+                total += ruedas2;
+
+                Vehiculos vehiculo2 = retornarVehiculoAgregado(total, 2);
+                vehiculo1.setNombre("Lamborghini");
+                vehiculo1.setInfo("1 carroceria, 2 chasis, 6 motores, 5 ruedas");
+                colaNivel(vehiculo2, main.colaNivel1C2, main.colaNivel2C2, main.colaNivel3C2);
+                System.out.println(vehiculo2.getNombre());
+                System.out.println(vehiculo2.id);
+                System.out.println(vehiculo2.calidad);
+            }
         }
+        
     }
     
     public Vehiculos seleccVehiculo(int marca) {
