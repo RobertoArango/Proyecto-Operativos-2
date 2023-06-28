@@ -5,6 +5,8 @@
  */
 package proyecto_operativos_2;
 
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author rober
@@ -14,9 +16,82 @@ public class Carrera extends javax.swing.JFrame {
     /**
      * Creates new form Carrera
      */
+    
+    DefaultListModel colaNivel1C1 = new DefaultListModel();
+    DefaultListModel colaNivel2C1 = new DefaultListModel();
+    DefaultListModel colaNivel3C1 = new DefaultListModel();
+    DefaultListModel colaRefuerzoC1 = new DefaultListModel();    
+    DefaultListModel colaNivel1C2 = new DefaultListModel();
+    DefaultListModel colaNivel2C2 = new DefaultListModel();
+    DefaultListModel colaNivel3C2 = new DefaultListModel();
+    DefaultListModel colaRefuerzoC2 = new DefaultListModel();  
+    
     public Carrera() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
     }
+
+public DefaultListModel writeJlist(Colas cola, Nodos node, DefaultListModel cola2) {
+    for (int i = 0; i < cola.getSize(); i++) {
+        Vehiculos vehi = (Vehiculos) node.getData();
+        cola2.addElement("ID: " + vehi.id + " Puntos: " + vehi.puntos);
+        node = node.getNext();
+    }
+    return cola2;
+} 
+
+public void actualizarColaC1(Colas cola1, Colas cola2, Colas cola3, Colas refuerzo) {           
+
+    Nodos primer1 = cola1.getFirst();
+    Nodos primer2 = cola2.getFirst();
+    Nodos primer3 = cola3.getFirst();
+    Nodos primerR = refuerzo.getFirst();
+
+    
+    colaNivel1C1.removeAllElements();
+    colaNivel1C1 = writeJlist(cola1, primer1, colaNivel1C1);
+    bugaC1.setModel(colaNivel1C1);
+    
+    colaNivel2C1.removeAllElements();
+    colaNivel2C1 = writeJlist(cola2, primer2, colaNivel2C1);
+    bugaC2.setModel(colaNivel2C1);
+    
+    colaNivel3C1.removeAllElements();
+    colaNivel3C1 = writeJlist(cola3, primer3, colaNivel3C1);
+    bugaC3.setModel(colaNivel3C1);
+    
+    colaRefuerzoC1.removeAllElements();
+    colaRefuerzoC1 = writeJlist(refuerzo, primerR, colaRefuerzoC1);
+    bugaR.setModel(colaRefuerzoC1);
+    
+}   
+
+public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuerzo) {           
+
+    Nodos primer1 = cola1.getFirst();
+    Nodos primer2 = cola2.getFirst();
+    Nodos primer3 = cola3.getFirst();
+    Nodos primerR = refuerzo.getFirst();
+
+    
+    colaNivel1C2.removeAllElements();
+    colaNivel1C2 = writeJlist(cola1, primer1, colaNivel1C2);
+    lamboC1.setModel(colaNivel1C2);
+    
+    colaNivel2C2.removeAllElements();
+    colaNivel2C2 = writeJlist(cola2, primer2, colaNivel2C2);
+    lamboC2.setModel(colaNivel2C2);
+    
+    colaNivel3C2.removeAllElements();
+    colaNivel3C2 = writeJlist(cola3, primer3, colaNivel3C2);
+    lamboC3.setModel(colaNivel3C2);
+    
+    colaRefuerzoC2.removeAllElements();
+    colaRefuerzoC2 = writeJlist(refuerzo, primerR, colaRefuerzoC2);
+    lamboR.setModel(colaRefuerzoC2);
+    
+} 
 
     /**
      * This method is called from within the constructor to initialize the form.
