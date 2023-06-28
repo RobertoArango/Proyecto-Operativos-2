@@ -20,7 +20,7 @@ public class IA {
     public void carrera(Vehiculos[] Vehi) {
         try {
             estado = "Carrera";
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.SECONDS.sleep(lectorTXT.leer());
 
         } catch (InterruptedException ex) {
             JOptionPane.showMessageDialog(null, "Ha ocurrido un error con la IA", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -101,7 +101,7 @@ public class IA {
 
         try {
             estado = "Carrera";
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.SECONDS.sleep(lectorTXT.leer());
 
         } catch (InterruptedException ex) {
             JOptionPane.showMessageDialog(null, "Ha ocurrido un error con la IA", "ERROR", JOptionPane.ERROR_MESSAGE);
