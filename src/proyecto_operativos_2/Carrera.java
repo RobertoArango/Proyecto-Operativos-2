@@ -6,6 +6,7 @@
 package proyecto_operativos_2;
 
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -127,6 +128,10 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         winsLambo = new javax.swing.JLabel();
         vBuga = new javax.swing.JLabel();
         winsBuga = new javax.swing.JLabel();
+        labelTiempo = new javax.swing.JLabel();
+        tiempoSimu = new javax.swing.JTextField();
+        labelTiempo1 = new javax.swing.JLabel();
+        enviar = new javax.swing.JButton();
         jScrollPane = new javax.swing.JScrollPane();
         lamboC1 = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -292,6 +297,45 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         winsBuga.setOpaque(true);
         jPanel1.add(winsBuga, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 310, 70, 40));
 
+        labelTiempo.setBackground(new java.awt.Color(102, 102, 102));
+        labelTiempo.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
+        labelTiempo.setForeground(new java.awt.Color(255, 255, 255));
+        labelTiempo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelTiempo.setText("Tiempo de simulacion");
+        labelTiempo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
+        labelTiempo.setOpaque(true);
+        jPanel1.add(labelTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, 410, 40));
+
+        tiempoSimu.setFont(new java.awt.Font("8BIT WONDER", 0, 18)); // NOI18N
+        tiempoSimu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tiempoSimu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tiempoSimuActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tiempoSimu, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 580, 70, 30));
+
+        labelTiempo1.setBackground(new java.awt.Color(102, 102, 102));
+        labelTiempo1.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
+        labelTiempo1.setForeground(new java.awt.Color(255, 255, 255));
+        labelTiempo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelTiempo1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
+        labelTiempo1.setOpaque(true);
+        jPanel1.add(labelTiempo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 570, 90, 50));
+
+        enviar.setBackground(new java.awt.Color(102, 102, 102));
+        enviar.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
+        enviar.setForeground(new java.awt.Color(255, 255, 255));
+        enviar.setText("↑");
+        enviar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
+        enviar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        enviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enviarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 570, 50, 50));
+
         jScrollPane.setViewportView(lamboC1);
 
         jPanel1.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 130, 130));
@@ -340,6 +384,25 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tiempoSimuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiempoSimuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tiempoSimuActionPerformed
+
+    private void enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarActionPerformed
+
+        if(tiempoSimu.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Asegurese que el campo no este vacio");
+        }
+        else{
+            String tiempoSimuInput = tiempoSimu.getText();
+            int tiempoSimuInputInt;
+            tiempoSimuInputInt = Integer.parseInt(tiempoSimuInput);
+            main.tiempo = tiempoSimuInputInt;
+            lectorTXT.escribir();
+        }
+
+    }//GEN-LAST:event_enviarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -390,6 +453,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
     private javax.swing.JLabel c7;
     private javax.swing.JLabel c8;
     private javax.swing.JLabel c9;
+    private javax.swing.JButton enviar;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane;
@@ -400,6 +464,8 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JLabel labelTiempo;
+    private javax.swing.JLabel labelTiempo1;
     private javax.swing.JList<String> lamboC1;
     private javax.swing.JList<String> lamboC2;
     private javax.swing.JList<String> lamboC3;
@@ -407,6 +473,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
     private javax.swing.JLabel nameB;
     private javax.swing.JLabel nameL;
     private javax.swing.JLabel resultado;
+    private javax.swing.JTextField tiempoSimu;
     private javax.swing.JLabel vBuga;
     private javax.swing.JLabel vLambo;
     private javax.swing.JLabel winsBuga;

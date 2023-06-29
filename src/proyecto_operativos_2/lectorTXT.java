@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.swing.JOptionPane;
 
 /**
@@ -46,5 +47,20 @@ public class lectorTXT {
             System.exit(1);
         }
         return Tiempo;
+    }
+    
+        public static void escribir() {
+        try {
+            String nuevoTiempo = Integer.toString(main.tiempo);                
+            
+            PrintWriter pw = new PrintWriter("test\\tiempo.txt");
+            pw.print(nuevoTiempo);
+            pw.close();
+            JOptionPane.showMessageDialog(null, "Los datos iniciales se han actualizado");
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "error", "ERROR", JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
+        }
     }
 }

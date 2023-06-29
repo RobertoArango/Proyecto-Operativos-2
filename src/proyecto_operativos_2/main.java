@@ -18,6 +18,7 @@ public class main {
     public static int idB = 0;
     public static int idL = 0;
     public static int ciclos = 0;
+    public static int tiempo = 1;
     public static Colas colaRefuerzo1 = new Colas();
     public static Colas colaRefuerzo2 = new Colas();
     public static Colas colaNivel1C1 = new Colas();
