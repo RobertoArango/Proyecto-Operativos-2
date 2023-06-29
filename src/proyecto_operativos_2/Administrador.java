@@ -16,23 +16,43 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Administrador {
     
     private Vehiculos retornarVehiculoAgregado(int calidad, int marca){
-        //estos valores son placeholders, mas adelante cuando detallemos la sumatoria de calidades se dictara el valor condicional
-        if (calidad <= 1) {
-            int id = main.id++;
-            Vehiculos vehiculo = new Vehiculos(id, 3, calidad, marca);
-            return vehiculo;
-            
-        } else if (calidad >= 2 && calidad <= 3){
-            int id = main.id++;
-            Vehiculos vehiculo = new Vehiculos(id, 2, calidad, marca);
-            return vehiculo;
-            
-        } else { 
-            int id = main.id++;
-            Vehiculos vehiculo = new Vehiculos(id, 1, calidad, marca);
-            return vehiculo;
-        }
         
+        if (marca == 1){
+       
+            if (calidad <= 19) {
+                int id = main.idB++;
+                Vehiculos vehiculo = new Vehiculos(id, 3, calidad, marca);
+                return vehiculo;
+
+            } else if (calidad >= 20 && calidad <= 30) {
+                int id = main.idB++;
+                Vehiculos vehiculo = new Vehiculos(id, 2, calidad, marca);
+                return vehiculo;
+
+            } else {
+                int id = main.idB++;
+                Vehiculos vehiculo = new Vehiculos(id, 1, calidad, marca);
+                return vehiculo;
+            }
+            
+        } else {
+            
+            if (calidad <= 19) {
+                int id = main.idL++;
+                Vehiculos vehiculo = new Vehiculos(id, 3, calidad, marca);
+                return vehiculo;
+
+            } else if (calidad >= 20 && calidad <= 30) {
+                int id = main.idL++;
+                Vehiculos vehiculo = new Vehiculos(id, 2, calidad, marca);
+                return vehiculo;
+
+            } else {
+                int id = main.idL++;
+                Vehiculos vehiculo = new Vehiculos(id, 1, calidad, marca);
+                return vehiculo;
+            }
+        }
     }
     
     
@@ -75,6 +95,7 @@ public class Administrador {
     public void agregarVehiculo() {
 
         int probs = 100;
+        int probA = ThreadLocalRandom.current().nextInt(1, probs); //probabilidad para agregar un vehiculo
 
         int carroceriaProb = ThreadLocalRandom.current().nextInt(1, probs);
         int chasisProb = ThreadLocalRandom.current().nextInt(1, probs);
@@ -133,7 +154,7 @@ public class Administrador {
             System.out.println(vehiculo2.id);
             System.out.println(vehiculo2.calidad);
         } else {
-            if (probs <= 80) {
+            if (probA <= 80) {
                 int carroceria1 = CalidadVehiculo(2, carroceriaProb, 60);
                 total += carroceria1;
 

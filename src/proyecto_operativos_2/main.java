@@ -15,7 +15,8 @@ public class main {
      * @param args the command line arguments
      */
     
-    public static int id = 0;
+    public static int idB = 0;
+    public static int idL = 0;
     public static int ciclos = 0;
     public static Colas colaRefuerzo1 = new Colas();
     public static Colas colaRefuerzo2 = new Colas();

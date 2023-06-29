@@ -32,11 +32,17 @@ public class Carrera extends javax.swing.JFrame {
         this.setVisible(true);
     }
 
-public DefaultListModel writeJlist(Colas cola, Nodos node, DefaultListModel cola2) {
+public DefaultListModel escribirLista(Colas cola, Nodos nodo, DefaultListModel cola2) {
     for (int i = 0; i < cola.getSize(); i++) {
-        Vehiculos vehi = (Vehiculos) node.getData();
-        cola2.addElement("ID: " + vehi.id + " Puntos: " + vehi.puntos);
-        node = node.getNext();
+        Vehiculos vehi = (Vehiculos) nodo.getData();
+        if (vehi.marca == 1){
+            cola2.addElement("ID: " + "B" + vehi.id + " Puntos: " + vehi.puntos);
+            nodo = nodo.getNext();
+        } else {
+            cola2.addElement("ID: " + "L" +vehi.id + " Puntos: " + vehi.puntos);
+            nodo = nodo.getNext();
+        }
+        
     }
     return cola2;
 } 
@@ -50,19 +56,19 @@ public void actualizarColaC1(Colas cola1, Colas cola2, Colas cola3, Colas refuer
 
     
     colaNivel1C1.removeAllElements();
-    colaNivel1C1 = writeJlist(cola1, primer1, colaNivel1C1);
+    colaNivel1C1 = escribirLista(cola1, primer1, colaNivel1C1);
     bugaC1.setModel(colaNivel1C1);
     
     colaNivel2C1.removeAllElements();
-    colaNivel2C1 = writeJlist(cola2, primer2, colaNivel2C1);
+    colaNivel2C1 = escribirLista(cola2, primer2, colaNivel2C1);
     bugaC2.setModel(colaNivel2C1);
     
     colaNivel3C1.removeAllElements();
-    colaNivel3C1 = writeJlist(cola3, primer3, colaNivel3C1);
+    colaNivel3C1 = escribirLista(cola3, primer3, colaNivel3C1);
     bugaC3.setModel(colaNivel3C1);
     
     colaRefuerzo1.removeAllElements();
-    colaRefuerzo1 = writeJlist(refuerzo, primerR, colaRefuerzo1);
+    colaRefuerzo1 = escribirLista(refuerzo, primerR, colaRefuerzo1);
     bugaR.setModel(colaRefuerzo1);
     
 }   
@@ -76,19 +82,19 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
 
     
     colaNivel1C2.removeAllElements();
-    colaNivel1C2 = writeJlist(cola1, primer1, colaNivel1C2);
+    colaNivel1C2 = escribirLista(cola1, primer1, colaNivel1C2);
     lamboC1.setModel(colaNivel1C2);
     
     colaNivel2C2.removeAllElements();
-    colaNivel2C2 = writeJlist(cola2, primer2, colaNivel2C2);
+    colaNivel2C2 = escribirLista(cola2, primer2, colaNivel2C2);
     lamboC2.setModel(colaNivel2C2);
     
     colaNivel3C2.removeAllElements();
-    colaNivel3C2 = writeJlist(cola3, primer3, colaNivel3C2);
+    colaNivel3C2 = escribirLista(cola3, primer3, colaNivel3C2);
     lamboC3.setModel(colaNivel3C2);
     
     colaRefuerzo2.removeAllElements();
-    colaRefuerzo2 = writeJlist(refuerzo, primerR, colaRefuerzo2);
+    colaRefuerzo2 = escribirLista(refuerzo, primerR, colaRefuerzo2);
     lamboR.setModel(colaRefuerzo2);
     
 } 
