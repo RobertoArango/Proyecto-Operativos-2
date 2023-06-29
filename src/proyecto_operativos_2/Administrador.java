@@ -7,6 +7,7 @@ package proyecto_operativos_2;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
+import proyecto_operativos_2.Administrador;
 
 /**
  *

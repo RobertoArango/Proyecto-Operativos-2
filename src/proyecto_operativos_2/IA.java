@@ -118,7 +118,8 @@ public class IA {
             resultado = "Fallo";
         }
 
-        main.ciclos++;        
+        main.ciclos++;
+        admin.desencolarRefuerzo();        
         
         try {
             estado = "Carrera";
