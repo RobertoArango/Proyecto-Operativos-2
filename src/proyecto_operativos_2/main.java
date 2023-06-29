@@ -33,13 +33,21 @@ public class main {
         
         Vehiculos vehiculos1;
         Vehiculos vehiculos2;
+        
+        Carrera carrera = new Carrera();
+        carrera.setLocationRelativeTo(null);
+        carrera.setVisible(true);
 
          while (true) {
              
             vehiculos1 = admin.seleccVehiculo(1);
             vehiculos2 = admin.seleccVehiculo(2);
+            
+            carrera.actualizarColaC1(colaNivel1C1, colaNivel2C1, colaNivel3C1, colaRefuerzo1);
+            carrera.actualizarColaC2(colaNivel1C2, colaNivel2C2, colaNivel3C2, colaRefuerzo2);
+            
             Vehiculos[] Vehi = {vehiculos1, vehiculos2};
-            ia.carrera(Vehi);
+            ia.carrera(Vehi, carrera);
             
             if (ciclos >= 2) {
                 admin.agregarVehiculo();

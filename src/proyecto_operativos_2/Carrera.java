@@ -20,11 +20,11 @@ public class Carrera extends javax.swing.JFrame {
     DefaultListModel colaNivel1C1 = new DefaultListModel();
     DefaultListModel colaNivel2C1 = new DefaultListModel();
     DefaultListModel colaNivel3C1 = new DefaultListModel();
-    DefaultListModel colaRefuerzoC1 = new DefaultListModel();    
+    DefaultListModel colaRefuerzo1 = new DefaultListModel();    
     DefaultListModel colaNivel1C2 = new DefaultListModel();
     DefaultListModel colaNivel2C2 = new DefaultListModel();
     DefaultListModel colaNivel3C2 = new DefaultListModel();
-    DefaultListModel colaRefuerzoC2 = new DefaultListModel();  
+    DefaultListModel colaRefuerzo2 = new DefaultListModel();  
     
     public Carrera() {
         initComponents();
@@ -61,9 +61,9 @@ public void actualizarColaC1(Colas cola1, Colas cola2, Colas cola3, Colas refuer
     colaNivel3C1 = writeJlist(cola3, primer3, colaNivel3C1);
     bugaC3.setModel(colaNivel3C1);
     
-    colaRefuerzoC1.removeAllElements();
-    colaRefuerzoC1 = writeJlist(refuerzo, primerR, colaRefuerzoC1);
-    bugaR.setModel(colaRefuerzoC1);
+    colaRefuerzo1.removeAllElements();
+    colaRefuerzo1 = writeJlist(refuerzo, primerR, colaRefuerzo1);
+    bugaR.setModel(colaRefuerzo1);
     
 }   
 
@@ -87,9 +87,9 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
     colaNivel3C2 = writeJlist(cola3, primer3, colaNivel3C2);
     lamboC3.setModel(colaNivel3C2);
     
-    colaRefuerzoC2.removeAllElements();
-    colaRefuerzoC2 = writeJlist(refuerzo, primerR, colaRefuerzoC2);
-    lamboR.setModel(colaRefuerzoC2);
+    colaRefuerzo2.removeAllElements();
+    colaRefuerzo2 = writeJlist(refuerzo, primerR, colaRefuerzo2);
+    lamboR.setModel(colaRefuerzo2);
     
 } 
 

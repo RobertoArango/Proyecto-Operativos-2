@@ -114,20 +114,20 @@ public class Administrador {
 
             //Lambo
             int carroceria2 = CalidadVehiculo(1, carroceriaProb2, 60);
-            total += carroceria2;
+            total2 += carroceria2;
 
             int chasis2 = CalidadVehiculo(2, chasisProb2, 70);
-            total += chasis2;
+            total2 += chasis2;
 
             int motores2 = CalidadVehiculo(6, motorProb2, 50);
-            total += motores2;
+            total2 += motores2;
 
             int ruedas2 = CalidadVehiculo(5, ruedaProb2, 60);
-            total += ruedas2;
+            total2 += ruedas2;
 
-            Vehiculos vehiculo2 = retornarVehiculoAgregado(total, 2);
-            vehiculo1.setNombre("Lamborghini");
-            vehiculo1.setInfo("1 carroceria, 2 chasis, 6 motores, 5 ruedas");
+            Vehiculos vehiculo2 = retornarVehiculoAgregado(total2, 2);
+            vehiculo2.setNombre("Lamborghini");
+            vehiculo2.setInfo("1 carroceria, 2 chasis, 6 motores, 5 ruedas");
             colaNivel(vehiculo2, main.colaNivel1C2, main.colaNivel2C2, main.colaNivel3C2);
             System.out.println(vehiculo2.getNombre());
             System.out.println(vehiculo2.id);
@@ -156,20 +156,20 @@ public class Administrador {
 
                 //Lambo
                 int carroceria2 = CalidadVehiculo(1, carroceriaProb2, 60);
-                total += carroceria2;
+                total2 += carroceria2;
 
                 int chasis2 = CalidadVehiculo(2, chasisProb2, 70);
-                total += chasis2;
+                total2 += chasis2;
 
                 int motores2 = CalidadVehiculo(6, motorProb2, 50);
-                total += motores2;
+                total2 += motores2;
 
                 int ruedas2 = CalidadVehiculo(5, ruedaProb2, 60);
-                total += ruedas2;
+                total2 += ruedas2;
 
-                Vehiculos vehiculo2 = retornarVehiculoAgregado(total, 2);
-                vehiculo1.setNombre("Lamborghini");
-                vehiculo1.setInfo("1 carroceria, 2 chasis, 6 motores, 5 ruedas");
+                Vehiculos vehiculo2 = retornarVehiculoAgregado(total2, 2);
+                vehiculo2.setNombre("Lamborghini");
+                vehiculo2.setInfo("1 carroceria, 2 chasis, 6 motores, 5 ruedas");
                 colaNivel(vehiculo2, main.colaNivel1C2, main.colaNivel2C2, main.colaNivel3C2);
                 System.out.println(vehiculo2.getNombre());
                 System.out.println(vehiculo2.id);

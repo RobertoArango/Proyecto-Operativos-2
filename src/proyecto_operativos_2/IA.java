@@ -17,7 +17,7 @@ public class IA {
 
     String estado = "Preparando";
 
-    public void carrera(Vehiculos[] Vehi) {
+    public void carrera(Vehiculos[] Vehi, Carrera carrera) {
         try {
             estado = "Carrera";
             TimeUnit.SECONDS.sleep(lectorTXT.leer());
