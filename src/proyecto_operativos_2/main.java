@@ -30,6 +30,16 @@ public class main {
     public static void main(String[] args) {
         Administrador admin = new Administrador();
         admin.agregarVehiculo();
+        admin.agregarVehiculo();
+        admin.agregarVehiculo();
+        admin.agregarVehiculo();
+        admin.agregarVehiculo();
+        admin.agregarVehiculo();
+        admin.agregarVehiculo();
+        admin.agregarVehiculo();
+        admin.agregarVehiculo();
+        admin.agregarVehiculo();       
+        
         IA ia = new IA();
         
         Vehiculos vehiculos1;

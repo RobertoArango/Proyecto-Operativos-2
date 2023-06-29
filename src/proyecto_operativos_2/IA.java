@@ -46,16 +46,18 @@ public class IA {
         
         if (probResultado <= 40) {
 
+            resultado = "En carrera";
+
             if (Vehi[0].puntos > Vehi[1].puntos) {
                 ganador = Vehi[0];
                 ganar = true;
-                wB++;               
-                
+                wB++;
+
             } else if (Vehi[1].puntos > Vehi[0].puntos) {
                 ganador = Vehi[1];
                 ganar = true;
                 wL++;
-              
+
             } else {
                 Random random2 = new Random();
                 int probResultado2 = random2.nextInt(2);
@@ -73,12 +75,14 @@ public class IA {
 
         } else if (probResultado > 40 && probResultado <= 67) {
 
+            resultado = "En carrera";
             empatados[0] = Vehi[0];
             empatados[1] = Vehi[1];
             empatar = true;
 
         } else {
 
+            resultado = "En carrera";
             fallados[0] = Vehi[0];
             fallados[1] = Vehi[1];
             fallar = true;
@@ -97,7 +101,7 @@ public class IA {
 
             admin.reEncolar(empatados[0]);
             admin.reEncolar(empatados[1]);
-            
+
             System.out.println("Empatados:");
             System.out.println(empatados[0].nombre + " vs. " + empatados[1].nombre);
             resultado = "Empate";
@@ -105,7 +109,7 @@ public class IA {
             //for (Vehiculos fallado : fallados) {
             //    admin.encolarRefuerzo(fallado);
             //}
-            
+
             admin.encolarRefuerzo(fallados[0]);
             admin.encolarRefuerzo(fallados[1]);
 
@@ -114,8 +118,8 @@ public class IA {
             resultado = "Fallo";
         }
 
-        main.ciclos++;
-
+        main.ciclos++;        
+        
         try {
             estado = "Carrera";
             TimeUnit.SECONDS.sleep(lectorTXT.leer());

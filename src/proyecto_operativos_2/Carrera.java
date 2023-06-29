@@ -247,7 +247,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         resultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         resultado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
         resultado.setOpaque(true);
-        jPanel1.add(resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 420, 480, 40));
+        jPanel1.add(resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 480, 40));
 
         jLabel11.setBackground(new java.awt.Color(102, 102, 102));
         jLabel11.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
@@ -256,7 +256,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         jLabel11.setText("Resultado");
         jLabel11.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
         jLabel11.setOpaque(true);
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 360, 200, 40));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 200, 40));
 
         vLambo.setBackground(new java.awt.Color(102, 102, 102));
         vLambo.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
@@ -265,7 +265,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         vLambo.setText("VIctorias");
         vLambo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
         vLambo.setOpaque(true);
-        jPanel1.add(vLambo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 530, 210, 40));
+        jPanel1.add(vLambo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 210, 40));
 
         winsLambo.setBackground(new java.awt.Color(102, 102, 102));
         winsLambo.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
@@ -273,7 +273,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         winsLambo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         winsLambo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
         winsLambo.setOpaque(true);
-        jPanel1.add(winsLambo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 590, 70, 40));
+        jPanel1.add(winsLambo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 70, 40));
 
         vBuga.setBackground(new java.awt.Color(102, 102, 102));
         vBuga.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
@@ -282,7 +282,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         vBuga.setText("VIctorias");
         vBuga.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
         vBuga.setOpaque(true);
-        jPanel1.add(vBuga, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 530, 210, 40));
+        jPanel1.add(vBuga, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 250, 210, 40));
 
         winsBuga.setBackground(new java.awt.Color(102, 102, 102));
         winsBuga.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
@@ -290,7 +290,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         winsBuga.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         winsBuga.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
         winsBuga.setOpaque(true);
-        jPanel1.add(winsBuga, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 590, 70, 40));
+        jPanel1.add(winsBuga, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 310, 70, 40));
 
         jScrollPane.setViewportView(lamboC1);
 

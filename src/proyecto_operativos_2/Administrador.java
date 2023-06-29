@@ -15,6 +15,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Administrador {
     
+     public static int contadorL = 0;
+     public static int contadorB = 0;
+    
     private Vehiculos retornarVehiculoAgregado(int calidad, int marca){
         
         if (marca == 1){
@@ -112,7 +115,6 @@ public class Administrador {
         int total2 = 0;
 
         if (main.ciclos < 2) {
-            System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             //Bugatti
             int carroceria1 = CalidadVehiculo(2, carroceriaProb, 60);
             total += carroceria1;
@@ -130,9 +132,11 @@ public class Administrador {
             vehiculo1.setNombre("Bugatti");
             vehiculo1.setInfo("2 carrocerias, 1 chasis, 4 motores, 4 ruedas");
             colaNivel(vehiculo1, main.colaNivel1C1, main.colaNivel2C1, main.colaNivel3C1);
-            System.out.println(vehiculo1.getNombre());
-            System.out.println(vehiculo1.id);
-            System.out.println(vehiculo1.calidad);
+            contadorB++;
+            System.out.println("Carros buga: " +contadorB);
+            //System.out.println(vehiculo1.getNombre());
+            //System.out.println(vehiculo1.id);
+            //System.out.println(vehiculo1.calidad);
 
             //Lambo
             int carroceria2 = CalidadVehiculo(1, carroceriaProb2, 60);
@@ -151,9 +155,11 @@ public class Administrador {
             vehiculo2.setNombre("Lamborghini");
             vehiculo2.setInfo("1 carroceria, 2 chasis, 6 motores, 5 ruedas");
             colaNivel(vehiculo2, main.colaNivel1C2, main.colaNivel2C2, main.colaNivel3C2);
-            System.out.println(vehiculo2.getNombre());
-            System.out.println(vehiculo2.id);
-            System.out.println(vehiculo2.calidad);
+            contadorL++;
+            System.out.println("Carros lambo: " +contadorL);
+            //System.out.println(vehiculo2.getNombre());
+            //System.out.println(vehiculo2.id);
+            //System.out.println(vehiculo2.calidad);
         } else {
             if (probA <= 80) {
                 int carroceria1 = CalidadVehiculo(2, carroceriaProb, 60);
@@ -172,9 +178,11 @@ public class Administrador {
                 vehiculo1.setNombre("Bugatti");
                 vehiculo1.setInfo("2 carrocerias, 1 chasis, 4 motores, 4 ruedas");
                 colaNivel(vehiculo1, main.colaNivel1C1, main.colaNivel2C1, main.colaNivel3C1);
-                System.out.println(vehiculo1.getNombre());
-                System.out.println(vehiculo1.id);
-                System.out.println(vehiculo1.calidad);
+                contadorB++;
+                System.out.println("Carros buga: " +contadorB);
+                //System.out.println(vehiculo1.getNombre());
+                //System.out.println(vehiculo1.id);
+                //System.out.println(vehiculo1.calidad);
 
                 //Lambo
                 int carroceria2 = CalidadVehiculo(1, carroceriaProb2, 60);
@@ -193,9 +201,11 @@ public class Administrador {
                 vehiculo2.setNombre("Lamborghini");
                 vehiculo2.setInfo("1 carroceria, 2 chasis, 6 motores, 5 ruedas");
                 colaNivel(vehiculo2, main.colaNivel1C2, main.colaNivel2C2, main.colaNivel3C2);
-                System.out.println(vehiculo2.getNombre());
-                System.out.println(vehiculo2.id);
-                System.out.println(vehiculo2.calidad);
+                contadorL++;
+                System.out.println("Carros lambo: " +contadorL);
+                //System.out.println(vehiculo2.getNombre());
+                //System.out.println(vehiculo2.id);
+                //System.out.println(vehiculo2.calidad);
             }
         }
 
