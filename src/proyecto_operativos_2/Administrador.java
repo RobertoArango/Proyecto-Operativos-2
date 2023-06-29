@@ -74,19 +74,19 @@ public class Administrador {
     
     public void agregarVehiculo() {
 
-        Random probs = new Random();
+        int probs = 100;
 
-        int carroceriaProb = probs.nextInt(100);
-        int chasisProb = probs.nextInt(100);
-        int motorProb = probs.nextInt(100);
-        int ruedaProb = probs.nextInt(100);
+        int carroceriaProb = ThreadLocalRandom.current().nextInt(1, probs);
+        int chasisProb = ThreadLocalRandom.current().nextInt(1, probs);
+        int motorProb = ThreadLocalRandom.current().nextInt(1, probs);
+        int ruedaProb = ThreadLocalRandom.current().nextInt(1, probs);
 
         int total = 0;
 
-        int carroceriaProb2 = probs.nextInt(100);
-        int chasisProb2 = probs.nextInt(100);
-        int motorProb2 = probs.nextInt(100);
-        int ruedaProb2 = probs.nextInt(100);
+        int carroceriaProb2 = ThreadLocalRandom.current().nextInt(1, probs);
+        int chasisProb2 = ThreadLocalRandom.current().nextInt(1, probs);
+        int motorProb2 = ThreadLocalRandom.current().nextInt(1, probs);
+        int ruedaProb2 = ThreadLocalRandom.current().nextInt(1, probs);
 
         int total2 = 0;
 
@@ -133,7 +133,7 @@ public class Administrador {
             System.out.println(vehiculo2.id);
             System.out.println(vehiculo2.calidad);
         } else {
-            if (probs.nextInt(100) <= 80) {
+            if (probs <= 80) {
                 int carroceria1 = CalidadVehiculo(2, carroceriaProb, 60);
                 total += carroceria1;
 
@@ -347,17 +347,15 @@ public class Administrador {
     
     public void desencolarRefuerzo() {
 
-        Random probabilidad = new Random();
-
-        int probabilidad1 = probabilidad.nextInt(100);
-        int probabilidad2 = probabilidad.nextInt(100);
+        int probabilidad1 = ThreadLocalRandom.current().nextInt(0, 100);
+        int probabilidad2 = ThreadLocalRandom.current().nextInt(0, 100);
 
         if (main.colaRefuerzo1.getSize() > 0 && probabilidad1 <= 40) {
             Vehiculos vehiculo = (Vehiculos) main.colaRefuerzo1.desencolar();
             reEncolar(vehiculo);//revisar como mandarlo a la cola 1
         }
 
-        if (main.colaRefuerzo2.getSize() > 0 && probabilidad1 <= 40) {
+        if (main.colaRefuerzo2.getSize() > 0 && probabilidad2 <= 40) {
             Vehiculos vehiculo = (Vehiculos) main.colaRefuerzo2.desencolar();
             reEncolar(vehiculo);//revisar como mandarlo a la cola 1
         }
