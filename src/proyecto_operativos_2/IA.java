@@ -16,6 +16,10 @@ import javax.swing.JOptionPane;
 public class IA {
 
     String estado = "Preparando";
+    
+    public static String resultado = "";
+    public static int wB = 0;
+    public static int wL = 0;
 
     public void carrera(Vehiculos[] Vehi, Carrera carrera) {
         try {
@@ -36,20 +40,22 @@ public class IA {
         boolean ganar = false;
         boolean empatar = false;
         boolean fallar = false;
-
+       
         Random random = new Random();
         int probResultado = random.nextInt(100);
-
+        
         if (probResultado <= 40) {
 
             if (Vehi[0].puntos > Vehi[1].puntos) {
                 ganador = Vehi[0];
                 ganar = true;
-
+                wB++;               
+                
             } else if (Vehi[1].puntos > Vehi[0].puntos) {
                 ganador = Vehi[1];
                 ganar = true;
-
+                wL++;
+              
             } else {
                 Random random2 = new Random();
                 int probResultado2 = random2.nextInt(2);
@@ -57,9 +63,11 @@ public class IA {
                 if (probResultado2 < 1) {
                     ganador = Vehi[0];
                     ganar = true;
+                    wB++;
                 } else {
                     ganador = Vehi[1];
                     ganar = true;
+                    wL++;
                 }
             }
 
@@ -81,20 +89,29 @@ public class IA {
             System.out.println("Ganó:");
             System.out.println(ganador.nombre);
             System.out.println(ganador.info);
+            resultado = "Ganador " + ganador.nombre;
         } else if (empatar) {
-            for (Vehiculos empatado : empatados) {
-                admin.reEncolar(empatado);
-            }
+            //for (Vehiculos empatado : empatados) {
+            //    admin.reEncolar(empatado);
+            //}
 
+            admin.reEncolar(empatados[0]);
+            admin.reEncolar(empatados[1]);
+            
             System.out.println("Empatados:");
             System.out.println(empatados[0].nombre + " vs. " + empatados[1].nombre);
+            resultado = "Empate";
         } else if (fallar) {
-            for (Vehiculos fallado : fallados) {
-                admin.encolarRefuerzo(fallado);
-            }
+            //for (Vehiculos fallado : fallados) {
+            //    admin.encolarRefuerzo(fallado);
+            //}
+            
+            admin.encolarRefuerzo(fallados[0]);
+            admin.encolarRefuerzo(fallados[1]);
 
             System.out.println("Fallados:");
             System.out.println(fallados[0].nombre + " vs. " + fallados[1].nombre);
+            resultado = "Fallo";
         }
 
         main.ciclos++;

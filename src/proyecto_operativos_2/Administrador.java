@@ -112,6 +112,7 @@ public class Administrador {
         int total2 = 0;
 
         if (main.ciclos < 2) {
+            System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             //Bugatti
             int carroceria1 = CalidadVehiculo(2, carroceriaProb, 60);
             total += carroceria1;

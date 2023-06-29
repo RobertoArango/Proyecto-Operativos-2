@@ -25,7 +25,6 @@ public class Carrera extends javax.swing.JFrame {
     DefaultListModel colaNivel2C2 = new DefaultListModel();
     DefaultListModel colaNivel3C2 = new DefaultListModel();
     DefaultListModel colaRefuerzo2 = new DefaultListModel();  
-    
     public Carrera() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -49,6 +48,9 @@ public DefaultListModel escribirLista(Colas cola, Nodos nodo, DefaultListModel c
 
 public void actualizarColaC1(Colas cola1, Colas cola2, Colas cola3, Colas refuerzo) {           
 
+    resultado.setText(IA.resultado);
+    winsLambo.setText(Integer.toString(IA.wL));
+    winsBuga.setText(Integer.toString(IA.wB));
     Nodos primer1 = cola1.getFirst();
     Nodos primer2 = cola2.getFirst();
     Nodos primer3 = cola3.getFirst();
@@ -269,7 +271,6 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         winsLambo.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
         winsLambo.setForeground(new java.awt.Color(255, 255, 255));
         winsLambo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        winsLambo.setText("1");
         winsLambo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
         winsLambo.setOpaque(true);
         jPanel1.add(winsLambo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 590, 70, 40));
@@ -287,7 +288,6 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         winsBuga.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
         winsBuga.setForeground(new java.awt.Color(255, 255, 255));
         winsBuga.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        winsBuga.setText("1");
         winsBuga.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
         winsBuga.setOpaque(true);
         jPanel1.add(winsBuga, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 590, 70, 40));
@@ -371,7 +371,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Carrera().setVisible(true);
+                new Carrera().setVisible(true);                
             }
         });
     }
