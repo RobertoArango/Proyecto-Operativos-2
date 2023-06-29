@@ -52,6 +52,9 @@ public void actualizarColaC1(Colas cola1, Colas cola2, Colas cola3, Colas refuer
     resultado.setText(IA.resultado);
     winsLambo.setText(Integer.toString(IA.wL));
     winsBuga.setText(Integer.toString(IA.wB));
+    lambo.setText(IA.carro2);
+    buga.setText(IA.carro1);
+    
     Nodos primer1 = cola1.getFirst();
     Nodos primer2 = cola2.getFirst();
     Nodos primer3 = cola3.getFirst();
@@ -132,6 +135,9 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         tiempoSimu = new javax.swing.JTextField();
         labelTiempo1 = new javax.swing.JLabel();
         enviar = new javax.swing.JButton();
+        buga = new javax.swing.JLabel();
+        lambo = new javax.swing.JLabel();
+        vs = new javax.swing.JLabel();
         jScrollPane = new javax.swing.JScrollPane();
         lamboC1 = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -252,7 +258,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         resultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         resultado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
         resultado.setOpaque(true);
-        jPanel1.add(resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 480, 40));
+        jPanel1.add(resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 480, 40));
 
         jLabel11.setBackground(new java.awt.Color(102, 102, 102));
         jLabel11.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
@@ -261,7 +267,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         jLabel11.setText("Resultado");
         jLabel11.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
         jLabel11.setOpaque(true);
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 200, 40));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, 200, 40));
 
         vLambo.setBackground(new java.awt.Color(102, 102, 102));
         vLambo.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
@@ -270,7 +276,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         vLambo.setText("VIctorias");
         vLambo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
         vLambo.setOpaque(true);
-        jPanel1.add(vLambo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 210, 40));
+        jPanel1.add(vLambo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, 210, 40));
 
         winsLambo.setBackground(new java.awt.Color(102, 102, 102));
         winsLambo.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
@@ -278,7 +284,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         winsLambo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         winsLambo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
         winsLambo.setOpaque(true);
-        jPanel1.add(winsLambo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 70, 40));
+        jPanel1.add(winsLambo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, 70, 40));
 
         vBuga.setBackground(new java.awt.Color(102, 102, 102));
         vBuga.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
@@ -287,7 +293,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         vBuga.setText("VIctorias");
         vBuga.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
         vBuga.setOpaque(true);
-        jPanel1.add(vBuga, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 250, 210, 40));
+        jPanel1.add(vBuga, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 350, 210, 40));
 
         winsBuga.setBackground(new java.awt.Color(102, 102, 102));
         winsBuga.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
@@ -295,7 +301,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
         winsBuga.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         winsBuga.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
         winsBuga.setOpaque(true);
-        jPanel1.add(winsBuga, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 310, 70, 40));
+        jPanel1.add(winsBuga, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 410, 70, 40));
 
         labelTiempo.setBackground(new java.awt.Color(102, 102, 102));
         labelTiempo.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
@@ -335,6 +341,31 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
             }
         });
         jPanel1.add(enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 570, 50, 50));
+
+        buga.setBackground(new java.awt.Color(102, 102, 102));
+        buga.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
+        buga.setForeground(new java.awt.Color(255, 255, 255));
+        buga.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        buga.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
+        buga.setOpaque(true);
+        jPanel1.add(buga, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 100, 310, 40));
+
+        lambo.setBackground(new java.awt.Color(102, 102, 102));
+        lambo.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
+        lambo.setForeground(new java.awt.Color(255, 255, 255));
+        lambo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lambo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
+        lambo.setOpaque(true);
+        jPanel1.add(lambo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 310, 40));
+
+        vs.setBackground(new java.awt.Color(102, 102, 102));
+        vs.setFont(new java.awt.Font("8BIT WONDER", 1, 20)); // NOI18N
+        vs.setForeground(new java.awt.Color(255, 255, 255));
+        vs.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        vs.setText("vs");
+        vs.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, null, null));
+        vs.setOpaque(true);
+        jPanel1.add(vs, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 100, 90, 40));
 
         jScrollPane.setViewportView(lamboC1);
 
@@ -441,6 +472,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bg;
+    private javax.swing.JLabel buga;
     private javax.swing.JList<String> bugaC1;
     private javax.swing.JList<String> bugaC2;
     private javax.swing.JList<String> bugaC3;
@@ -466,6 +498,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JLabel labelTiempo;
     private javax.swing.JLabel labelTiempo1;
+    private javax.swing.JLabel lambo;
     private javax.swing.JList<String> lamboC1;
     private javax.swing.JList<String> lamboC2;
     private javax.swing.JList<String> lamboC3;
@@ -476,6 +509,7 @@ public void actualizarColaC2(Colas cola1, Colas cola2, Colas cola3, Colas refuer
     private javax.swing.JTextField tiempoSimu;
     private javax.swing.JLabel vBuga;
     private javax.swing.JLabel vLambo;
+    private javax.swing.JLabel vs;
     private javax.swing.JLabel winsBuga;
     private javax.swing.JLabel winsLambo;
     // End of variables declaration//GEN-END:variables

@@ -14,16 +14,15 @@ import javax.swing.JOptionPane;
  * @author rober
  */
 public class IA {
-
-    String estado = "Preparando";
     
     public static String resultado = "";
     public static int wB = 0;
     public static int wL = 0;
-
+    public static String carro1 = "";
+    public static String carro2 = "";
+    
     public void carrera(Vehiculos[] Vehi, Carrera carrera) {
         try {
-            estado = "Carrera";
             TimeUnit.SECONDS.sleep(lectorTXT.leer());
 
         } catch (InterruptedException ex) {
@@ -43,6 +42,9 @@ public class IA {
        
         Random random = new Random();
         int probResultado = random.nextInt(100);
+        
+        carro1 = Vehi[0].nombre + " " + Vehi[0].puntos;
+        carro2 = Vehi[1].nombre + " " + Vehi[1].puntos;
         
         if (probResultado <= 40) {
 
@@ -94,6 +96,7 @@ public class IA {
             System.out.println(ganador.nombre);
             System.out.println(ganador.info);
             resultado = "Ganador " + ganador.nombre;
+            ganar = false;
         } else if (empatar) {
             //for (Vehiculos empatado : empatados) {
             //    admin.reEncolar(empatado);
@@ -105,6 +108,7 @@ public class IA {
             System.out.println("Empatados:");
             System.out.println(empatados[0].nombre + " vs. " + empatados[1].nombre);
             resultado = "Empate";
+            empatar = false;
         } else if (fallar) {
             //for (Vehiculos fallado : fallados) {
             //    admin.encolarRefuerzo(fallado);
@@ -116,13 +120,12 @@ public class IA {
             System.out.println("Fallados:");
             System.out.println(fallados[0].nombre + " vs. " + fallados[1].nombre);
             resultado = "Fallo";
+            
+            fallar = false;
         }
-
-        main.ciclos++;
-        admin.desencolarRefuerzo();        
-        
+        admin.desencolarRefuerzo();  
+        main.ciclos++;                    
         try {
-            estado = "Carrera";
             TimeUnit.SECONDS.sleep(lectorTXT.leer());
 
         } catch (InterruptedException ex) {

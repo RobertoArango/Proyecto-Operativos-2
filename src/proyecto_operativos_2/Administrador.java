@@ -28,7 +28,7 @@ public class Administrador {
                 Vehiculos vehiculo = new Vehiculos(id, 3, calidad, marca);
                 return vehiculo;
 
-            } else if (calidad >= 20 && calidad <= 30) {
+            } else if (calidad >= 20 && calidad <= 27) {
                 int id = main.idB++;
                 Vehiculos vehiculo = new Vehiculos(id, 2, calidad, marca);
                 return vehiculo;
@@ -46,7 +46,7 @@ public class Administrador {
                 Vehiculos vehiculo = new Vehiculos(id, 3, calidad, marca);
                 return vehiculo;
 
-            } else if (calidad >= 20 && calidad <= 30) {
+            } else if (calidad >= 20 && calidad <= 27) {
                 int id = main.idL++;
                 Vehiculos vehiculo = new Vehiculos(id, 2, calidad, marca);
                 return vehiculo;
@@ -62,19 +62,17 @@ public class Administrador {
     
     //Dictando las colas de prioridad
     private void colaNivel(Vehiculos vehiculo, Colas colaNivel1, Colas colaNivel2, Colas colaNivel3) {
-        switch (vehiculo.nivel) {
-            case 1: {
-                colaNivel1.encolar(vehiculo);
-            }
-            case 2: {
-                colaNivel2.encolar(vehiculo);
-            }
-            case 3: {
-                colaNivel3.encolar(vehiculo);
-            }
-            default: {
-                break;
-            }
+        
+        if (vehiculo.nivel == 1){
+            colaNivel1.encolar(vehiculo);
+        }
+        
+        else if (vehiculo.nivel == 2){
+            colaNivel2.encolar(vehiculo);
+        }
+        
+        else{
+            colaNivel3.encolar(vehiculo);
         }
     }
     
@@ -278,7 +276,7 @@ public class Administrador {
                     colaNivel3Aux.encolar(vehiculo);
                 }
             }
-             main.colaNivel3C1 = colaNivel2Aux;
+             main.colaNivel3C1 = colaNivel3Aux;
              
              Nodos primero = main.colaRefuerzo1.getFirst();
              for (int i = 0; i < main.colaRefuerzo1.getSize(); i++) {
@@ -329,7 +327,7 @@ public class Administrador {
                     colaNivel3Aux.encolar(vehiculo);
                 }
             }
-             main.colaNivel3C2 = colaNivel2Aux;
+             main.colaNivel3C2 = colaNivel3Aux;
              
              Nodos primero = main.colaRefuerzo2.getFirst();
              for (int i = 0; i < main.colaRefuerzo2.getSize(); i++) {
@@ -343,39 +341,28 @@ public class Administrador {
 
     }
     
-    public void reEncolar(Vehiculos vehiculo) {
+    public void reEncolar(Vehiculos vehiculo) { 
         
-        switch (vehiculo.marca) {
-            case 1: {
-                colaNivel(vehiculo, main.colaNivel1C1, main.colaNivel2C1, main.colaNivel3C1);
-                break;
-            }
-            case 2: {
-                colaNivel(vehiculo, main.colaNivel1C2, main.colaNivel2C2, main.colaNivel3C2);
-                break;
-
-            }
-            default: {
-                break;
-            }
+        if (vehiculo.marca == 1){
+            colaNivel(vehiculo, main.colaNivel1C1, main.colaNivel2C1, main.colaNivel3C1);
         }
-               
+        
+        else{
+            colaNivel(vehiculo, main.colaNivel1C2, main.colaNivel2C2, main.colaNivel3C2);
+        }
+                       
     }
     
     public void encolarRefuerzo(Vehiculos vehiculo) {
-
-        switch (vehiculo.marca) {
-            case 1: {
-                main.colaRefuerzo1.encolar(vehiculo);
-                break;
-            }
-            case 2: {
-                main.colaRefuerzo2.encolar(vehiculo);
-                break;
-
-            }
-
+      
+          if (vehiculo.marca == 1){
+            main.colaRefuerzo1.encolar(vehiculo);
         }
+        
+          else{
+            main.colaRefuerzo2.encolar(vehiculo);
+        }
+            
     }
     
     public void desencolarRefuerzo() {
